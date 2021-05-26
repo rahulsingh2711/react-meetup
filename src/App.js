@@ -7,8 +7,7 @@ import NewMeetup from "./pages/NewMeetup";
 
 function App() {
   return (
-  
-      <Layout>
+    <Layout>
       <Switch>
         <Route path="/" exact>
           <AllMeetUp />
@@ -20,8 +19,7 @@ function App() {
           <Favorites />
         </Route>
       </Switch>
-      </Layout>
-
+    </Layout>
   );
 }
 
