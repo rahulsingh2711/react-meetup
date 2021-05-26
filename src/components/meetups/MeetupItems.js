@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
-import FavoritesContext from "../../store/favourites-context";
-import Card from "../ui/Card";
-import classes from "./MeetupItems.module.css";
+import { useContext } from 'react';
 
-export default function MeetupItems(props) {
+import Card from '../ui/Card';
+import classes from './MeetupItems.module.css';
+import FavoritesContext from '../../store/favourites-context';
+
+function MeetupItem(props) {
   const favoritesCtx = useContext(FavoritesContext);
+
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
 
   function toggleFavoriteStatusHandler() {
@@ -34,10 +36,12 @@ export default function MeetupItems(props) {
         </div>
         <div className={classes.actions}>
           <button onClick={toggleFavoriteStatusHandler}>
-            {itemIsFavorite ? "Remove from Favorites" : "To Favorites"}
+            {itemIsFavorite ? 'Remove from Favorites' : 'To Favorites'}
           </button>
         </div>
       </Card>
     </li>
   );
 }
+
+export default MeetupItem;
