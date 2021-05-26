@@ -20,10 +20,8 @@ export default function AllMeetUp() {
             id: key,
             ...data[key],
           };
-          meetups.push(meetup)
+          meetups.push(meetup);
         }
-
-        
 
         setLoading(false);
         setloadedMeetUps(meetups);
